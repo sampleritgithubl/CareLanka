@@ -49,15 +49,22 @@ Direct integration with Sri Lanka's leading online pharmacies and delivery servi
 
 ---
 
-## 📸 Screenshots
+## 📸 App Screenshots
 
-| Login | Pharma Express | Medicine Reminder |
-| :---: | :---: | :---: |
-| <img src="screenshorts/login.jpeg" width="200"> | <img src="https://via.placeholder.com/200x400?text=Pharma+Express" width="200"> | <img src="https://via.placeholder.com/200x400?text=Reminder+Settings" width="200"> |
+### 🔐 Authentication
 
-> *Note: Upload your actual screenshots to a folder named `screenshots` in your repo and update the links above.*
+| Login | Register |
+|-------|----------|
+| <img src="screenshorts/login.jpeg" width="250"/> | <img src="screenshorts/register.jpeg" width="250"/> |
 
 ---
+
+### 🏠 Main Features
+
+| Dashboard | Caregiver | Online Medicine | Emergency Calls| Reminder |
+|-----------|-----------|--------|-----------|----------|
+| <img src="screenshorts/dashboard.jpeg" width="180"/> | <img src="screenshorts/caregiver.jpeg" width="180"/> | <img src="screenshorts/online.jpeg" width="180"/> | <img src="screenshorts/emergency.jpeg" width="180"/> | <img src="screenshorts/reminder.jpeg" width="180"/> |
+
 
 ## ⚙️ Installation & Setup
 
