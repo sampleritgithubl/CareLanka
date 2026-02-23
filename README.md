@@ -1,3 +1,4 @@
+
 # 🌿 CareLanka – Digital Healthcare Companion 🇱🇰
 
 <p align="center">
@@ -28,14 +29,11 @@ This project demonstrates real-world mobile development skills including authent
 
 ---
 
-
 ## 📥 Download CareLanka
 
 [Download Latest Version](https://github.com/sampleritgithubl/CareLanka/releases/latest)
 
-
-
-
+---
 
 # 🎥 Live App Preview
 
@@ -54,6 +52,14 @@ This project demonstrates real-world mobile development skills including authent
 ✔ Emergency Quick Access  
 ✔ Medicine Reminder System  
 ✔ Clean Material UI Design  
+
+---
+
+# 📸 Screenshots
+
+| Dashboard | Caregiver | Online | Emergency | Reminder |
+|-----------|-----------|--------|-----------|----------|
+| <img src="screenshorts/dashboard.jpeg" width="180"/> | <img src="screenshorts/caregiver.jpeg" width="180"/> | <img src="screenshorts/online.jpeg" width="180"/> | <img src="screenshorts/emergency.jpeg" width="180"/> | <img src="screenshorts/reminder.jpeg" width="180"/> |
 
 ---
 
@@ -138,20 +144,20 @@ doctors {
     hospital: "Asiri Hospital"
   }
 }
-```
+````
 
 ---
 
 # 🛠 Tech Stack
 
-| Layer | Technology |
-|-------|------------|
-| Language | Java |
-| UI | XML + Material Design |
-| Backend | Firebase Firestore |
-| Authentication | Firebase Auth |
-| Notifications | AlarmManager |
-| Maps | Google Maps Intent API |
+| Layer          | Technology             |
+| -------------- | ---------------------- |
+| Language       | Java                   |
+| UI             | XML + Material Design  |
+| Backend        | Firebase Firestore     |
+| Authentication | Firebase Auth          |
+| Notifications  | AlarmManager           |
+| Maps           | Google Maps Intent API |
 
 ---
 
@@ -161,39 +167,39 @@ doctors {
 git clone https://github.com/sampleritgithubl/CareLanka.git
 ```
 
-1. Open in Android Studio  
-2. Sync Gradle  
-3. Connect Firebase  
-4. Add `google-services.json`  
-5. Run project  
+1. Open in Android Studio
+2. Sync Gradle
+3. Connect Firebase
+4. Add `google-services.json`
+5. Run project
 
 ---
 
 # 🧠 What I Learned
 
-- Firebase Authentication integration
-- Firestore CRUD operations
-- Android lifecycle handling
-- Background services & notifications
-- Real-world healthcare app architecture
-- Google Maps integration
+* Firebase Authentication integration
+* Firestore CRUD operations
+* Android lifecycle handling
+* Background services & notifications
+* Real-world healthcare app architecture
+* Google Maps integration
 
 ---
 
 # 📈 Future Improvements
 
-- Appointment booking system  
-- AI symptom checker  
-- Prescription cloud storage  
-- Sinhala & Tamil language support  
+* Appointment booking system
+* AI symptom checker
+* Prescription cloud storage
+* Sinhala & Tamil language support
 
 ---
 
 # 👨‍💻 Developer
 
-Kavindu Rasanjana  
-📧 kavindu20rasanjana@gmail.com  
-🔗 https://github.com/sampleritgithubl  
+Kavindu Rasanjana
+📧 [kavindu20rasanjana@gmail.com](mailto:kavindu20rasanjana@gmail.com)
+🔗 [https://github.com/sampleritgithubl](https://github.com/sampleritgithubl)
 
 ---
 
@@ -206,3 +212,6 @@ If you like this project, please ⭐ star the repository!
 <p align="center">
   Made with ❤️ in Sri Lanka 🇱🇰
 </p>
+
+
+
