@@ -28,6 +28,15 @@ This project demonstrates real-world mobile development skills including authent
 
 ---
 
+
+## 📥 Download CareLanka
+
+[Download Latest Version](https://github.com/sampleritgithubl/CareLanka/releases/latest)
+
+
+
+
+
 # 🎥 Live App Preview
 
 <p align="center">
