@@ -19,7 +19,7 @@
 
 ## 🌍 About the Project
 
-**CareLanka** is a Sri Lanka-focused digital healthcare Android application built using **Java & Firebase**.
+CareLanka is a Sri Lanka-focused digital healthcare Android application built using Java & Firebase.
 
 It connects:
 
@@ -34,8 +34,6 @@ All in one smart mobile solution designed for Sri Lankan healthcare needs.
 
 # 🎥 Animated App Preview
 
-> 📌 Upload a screen recording GIF named `demo.gif` inside `screenshorts/`
-
 <p align="center">
   <img src="screenshorts/demo.gif" width="300"/>
 </p>
@@ -47,14 +45,33 @@ All in one smart mobile solution designed for Sri Lankan healthcare needs.
 ## 🔐 Authentication System
 - Firebase Email & Password Authentication
 - Secure Login & Registration
-- Role-based user access (Patient / Caregiver)
+- Role-based user access
 
 ---
 
-## 🏥 Hospital Finder
-- View Government & Private Hospitals
+## 🏥 Find Hospitals (Government & Private)
+
+- View Colombo District hospitals
+- Contact numbers included
 - Google Maps integration
-- Location-based filtering
+- Category filtering (Gov / Private)
+
+<p align="center">
+  <img src="screenshorts/find_hospital.jpeg" width="280"/>
+</p>
+
+---
+
+## 👨‍⚕️ Caregiver & Doctor Directory
+
+- View doctor profiles
+- Specialty filtering (Cardiologist, Pediatrician, etc.)
+- Hospital association
+- Contact details
+
+<p align="center">
+  <img src="screenshorts/caregiver_details.jpeg" width="280"/>
+</p>
 
 ---
 
@@ -69,21 +86,14 @@ All in one smart mobile solution designed for Sri Lankan healthcare needs.
 ## ⏰ Smart Reminder System
 - Medicine alarm notifications
 - Background AlarmManager
-- High-priority notifications
-
----
-
-## 👨‍⚕️ Doctor Directory
-- View specialist doctors
-- Filter by category
-- Hospital details included
+- High-priority alerts
 
 ---
 
 ## 🚑 Emergency Access
 - Quick call emergency numbers
-- Ambulance services
-- Fast access interface
+- 1990 Suwa Seriya Ambulance
+- Fast-access interface
 
 ---
 
@@ -110,7 +120,7 @@ All in one smart mobile solution designed for Sri Lankan healthcare needs.
 | Layer | Technology |
 |-------|------------|
 | Language | Java |
-| UI Design | XML + Material Design |
+| UI | XML + Material Design |
 | Backend | Firebase Firestore |
 | Authentication | Firebase Auth |
 | Notifications | AlarmManager |
@@ -138,31 +148,25 @@ git clone https://github.com/sampleritgithubl/CareLanka.git
 - Firestore CRUD operations
 - Android lifecycle management
 - Alarm & Notification handling
-- Clean UI structuring
-- Real-world healthcare app design
+- Healthcare data structuring
+- Google Maps integration
 
 ---
 
 # 📈 Future Improvements
 
-- Doctor appointment booking system  
+- Appointment booking system  
 - AI symptom checker  
-- Prescription cloud storage  
+- Prescription storage  
 - Sinhala & Tamil language support  
 
 ---
 
 # 👨‍💻 Developer
 
-**Kavindu Rasanjana**  
+Kavindu Rasanjana  
 📧 kavindu20rasanjana@gmail.com  
 🔗 https://github.com/sampleritgithubl  
-
----
-
-# 📜 License
-
-This project is licensed under the MIT License.
 
 ---
 
