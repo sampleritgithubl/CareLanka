@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "847533869537",
+    "project_id": "carelanka-ec2e4",
+    "storage_bucket": "carelanka-ec2e4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847533869537:android:a031cc3adff19469bbaaa0",
+        "android_client_info": {
+          "package_name": "com.example.carelanka"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcA6n6I3pNcb5MXlf1WX9cMnA4KIEDHck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
