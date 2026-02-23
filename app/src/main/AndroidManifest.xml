@@ -84,6 +84,9 @@
 
         <activity android:name=".ReminderActivity" />
 
+
+        <activity android:name=".FindCaregiverActivity" />
+
     </application>
 
 </manifest>

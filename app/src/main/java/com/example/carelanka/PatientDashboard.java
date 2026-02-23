@@ -43,8 +43,9 @@ public class PatientDashboard extends AppCompatActivity {
         }
 
         // Click Listeners සැකසීම
-        cardFindCaregiver.setOnClickListener(v ->
-                Toast.makeText(this, "Caregivers list coming soon", Toast.LENGTH_SHORT).show());
+        cardFindCaregiver.setOnClickListener(v -> {
+            startActivity(new Intent(this, FindCaregiverActivity.class));
+        });
 
         cardDoctors.setOnClickListener(v ->
                 startActivity(new Intent(this, SpecialtiesActivity.class)));
