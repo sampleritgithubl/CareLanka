@@ -1,57 +1,95 @@
-# CareLanka - Digital Healthcare Companion 🇱🇰
+# 🌿 CareLanka – Digital Healthcare Companion 🇱🇰
 
-[![Android](https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com/)
-[![Java](https://img.shields.io/badge/Language-Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://www.oracle.com/java/)
-[![Firebase](https://img.shields.io/badge/Backend-Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
+<p align="center">
+  <img src="screenshorts/app_logo.png" width="120"/>
+</p>
 
-**CareLanka** is a comprehensive healthcare mobile application designed specifically for the Sri Lankan community. It bridges the gap between patients and healthcare providers while offering essential medical tools at your fingertips.
+<p align="center">
+  <b>Smart • Reliable • Sri Lankan Healthcare at Your Fingertips</b>
+</p>
 
----
-
-## 🚀 Main Features
-
-### 1. Dual User Roles (Patient & Caregiver)
-* **Patients:** Can browse doctors, hospitals, and set reminders.
-* **Caregivers:** Can register to offer their services to those in need.
-
-### 2. Pharma Express (Online Medicine)
-Direct integration with Sri Lanka's leading online pharmacies and delivery services:
-* **Healthguard Pharmacy**
-* **Laugfs Wellness**
-* **QuickMed.lk**
-* **PickMe Flash** (For rapid prescription delivery)
-
-### 3. Pill Reminder ⏰
-* Never miss a dose again! Users can set custom alarms for their medications.
-* Receives high-priority notifications when it's time to take medicine.
-
-### 4. Smart Hospital Finder 🏥
-* Locate the nearest **Government and Private hospitals** using Google Maps integration.
-* Filter searches based on your current location.
-
-### 5. Specialist Doctor Directory
-* Find doctors based on specialties (Cardiologists, Pediatricians, etc.).
-* View doctor details and their practicing hospitals.
-
-### 6. Emergency Services
-* Quick access to emergency contact numbers and ambulance services in Sri Lanka.
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Language-Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Backend-Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Region-Sri_Lanka-8D153A?style=for-the-badge"/>
+</p>
 
 ---
 
-## 🛠 Tech Stack
+## 🌍 About the Project
 
-*   **Language:** Java
-*   **UI Layout:** XML (Material Design Components)
-*   **Database:** Firebase Firestore (Cloud Database)
-*   **Authentication:** Firebase Auth
-*   **Notifications:** Android AlarmManager & Notification Manager
-*   **Maps API:** Google Maps Intent API
+**CareLanka** is a Sri Lanka-focused digital healthcare Android application built using **Java & Firebase**.
+
+It connects:
+
+- 🧑‍⚕️ Patients  
+- 👩‍⚕️ Caregivers  
+- 🏥 Hospitals  
+- 💊 Pharmacies  
+
+All in one smart mobile solution designed for Sri Lankan healthcare needs.
 
 ---
 
-## 📸 App Screenshots
+# 🎥 Animated App Preview
 
-### 🔐 Authentication
+> 📌 Upload a screen recording GIF named `demo.gif` inside `screenshorts/`
+
+<p align="center">
+  <img src="screenshorts/demo.gif" width="300"/>
+</p>
+
+---
+
+# 🚀 Core Features
+
+## 🔐 Authentication System
+- Firebase Email & Password Authentication
+- Secure Login & Registration
+- Role-based user access (Patient / Caregiver)
+
+---
+
+## 🏥 Hospital Finder
+- View Government & Private Hospitals
+- Google Maps integration
+- Location-based filtering
+
+---
+
+## 💊 Online Medicine Services
+- Healthguard
+- Laugfs Wellness
+- QuickMed.lk
+- PickMe Flash Delivery
+
+---
+
+## ⏰ Smart Reminder System
+- Medicine alarm notifications
+- Background AlarmManager
+- High-priority notifications
+
+---
+
+## 👨‍⚕️ Doctor Directory
+- View specialist doctors
+- Filter by category
+- Hospital details included
+
+---
+
+## 🚑 Emergency Access
+- Quick call emergency numbers
+- Ambulance services
+- Fast access interface
+
+---
+
+# 📸 Screenshots
+
+## 🔐 Authentication
 
 | Login | Register |
 |-------|----------|
@@ -59,46 +97,75 @@ Direct integration with Sri Lanka's leading online pharmacies and delivery servi
 
 ---
 
-### 🏠 Main Features
+## 🏠 Main Features
 
-| Dashboard | Caregiver | Online Medicine | Emergency Calls| Reminder |
+| Dashboard | Caregiver | Online | Emergency | Reminder |
 |-----------|-----------|--------|-----------|----------|
 | <img src="screenshorts/dashboard.jpeg" width="180"/> | <img src="screenshorts/caregiver.jpeg" width="180"/> | <img src="screenshorts/online.jpeg" width="180"/> | <img src="screenshorts/emergency.jpeg" width="180"/> | <img src="screenshorts/reminder.jpeg" width="180"/> |
 
+---
 
-## ⚙️ Installation & Setup
+# 🛠 Tech Stack
 
-1.  **Clone the project:**
-    ```bash
-    git clone https://github.com/YourUsername/CareLanka.git
-    ```
-2.  **Open in Android Studio:**
-    Wait for Gradle sync to complete.
-3.  **Firebase Configuration:**
-    *   Create a project on [Firebase Console](https://console.firebase.google.com/).
-    *   Add an Android App with package name `com.example.carelanka`.
-    *   Download `google-services.json` and place it in the `app/` directory.
-    *   Enable **Email/Password Auth** and **Cloud Firestore**.
-4.  **Run the App:**
-    Connect an Android device or use an emulator (API 23 or higher).
+| Layer | Technology |
+|-------|------------|
+| Language | Java |
+| UI Design | XML + Material Design |
+| Backend | Firebase Firestore |
+| Authentication | Firebase Auth |
+| Notifications | AlarmManager |
+| Maps | Google Maps Intent API |
 
 ---
 
-## 🤝 Contributing
+# ⚙️ Installation Guide
 
-Contributions are welcome! If you have ideas to improve the app:
-1. Fork the Project.
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the Branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
+```bash
+git clone https://github.com/sampleritgithubl/CareLanka.git
+```
+
+1. Open in Android Studio  
+2. Sync Gradle  
+3. Connect Firebase  
+4. Add `google-services.json`  
+5. Run on Emulator / Physical Device  
+
+---
+
+# 🧠 What I Learned
+
+- Firebase Authentication integration
+- Firestore CRUD operations
+- Android lifecycle management
+- Alarm & Notification handling
+- Clean UI structuring
+- Real-world healthcare app design
 
 ---
 
-## 📧 Contact
+# 📈 Future Improvements
 
-**Developer Name** - [Your Email Address]  
-**Project Link:** [https://github.com/YourUsername/CareLanka](https://github.com/YourUsername/CareLanka)
+- Doctor appointment booking system  
+- AI symptom checker  
+- Prescription cloud storage  
+- Sinhala & Tamil language support  
 
 ---
-*Developed with ❤️ for a Healthier Sri Lanka.*
+
+# 👨‍💻 Developer
+
+**Kavindu Rasanjana**  
+📧 kavindu20rasanjana@gmail.com  
+🔗 https://github.com/sampleritgithubl  
+
+---
+
+# 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+# ⭐ Show Your Support
+
+If you like this project, please ⭐ star the repository!
