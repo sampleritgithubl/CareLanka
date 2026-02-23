@@ -6,7 +6,9 @@
     android:background="#F8F9FA">
 
     <!-- Header -->
+
     <TextView
+        android:id="@+id/tvDoctorsListTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Available Doctors"
