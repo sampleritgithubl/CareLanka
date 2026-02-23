@@ -12,6 +12,7 @@
   <img src="https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white"/>
   <img src="https://img.shields.io/badge/Language-Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"/>
   <img src="https://img.shields.io/badge/Backend-Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Database-Firestore-FFCA28?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Region-Sri_Lanka-8D153A?style=for-the-badge"/>
 </p>
 
@@ -21,40 +22,46 @@
 
 CareLanka is a Sri Lanka-focused digital healthcare Android application built using Java & Firebase.
 
-It connects:
+It connects patients, caregivers, hospitals, and pharmacies into one centralized healthcare ecosystem.
 
-- 🧑‍⚕️ Patients  
-- 👩‍⚕️ Caregivers  
-- 🏥 Hospitals  
-- 💊 Pharmacies  
-
-All in one smart mobile solution designed for Sri Lankan healthcare needs.
+This project demonstrates real-world mobile development skills including authentication, cloud database integration, notifications, and location services.
 
 ---
 
-# 🎥 Animated App Preview
+# 🎥 Live App Preview
 
 <p align="center">
-  <img src="screenshorts/demo.gif" width="300"/>
+  <img src="screenshorts/demo.gif" width="320"/>
 </p>
 
 ---
 
-# 🚀 Core Features
+# 🚀 Project Highlights
 
-## 🔐 Authentication System
-- Firebase Email & Password Authentication
-- Secure Login & Registration
+✔ Secure Firebase Authentication  
+✔ Real-time Firestore Database  
+✔ Hospital & Doctor Directory  
+✔ Google Maps Integration  
+✔ Emergency Quick Access  
+✔ Medicine Reminder System  
+✔ Clean Material UI Design  
+
+---
+
+# 🏥 Core Features
+
+## 🔐 Authentication
+- Email & Password Login
+- Secure Registration
 - Role-based user access
 
 ---
 
-## 🏥 Find Hospitals (Government & Private)
-
-- View Colombo District hospitals
-- Contact numbers included
-- Google Maps integration
-- Category filtering (Gov / Private)
+## 🏥 Find Hospitals
+- Government & Private Hospitals
+- Colombo District coverage
+- Direct call feature
+- Google Maps navigation
 
 <p align="center">
   <img src="screenshorts/find_hospital.jpeg" width="280"/>
@@ -62,12 +69,11 @@ All in one smart mobile solution designed for Sri Lankan healthcare needs.
 
 ---
 
-## 👨‍⚕️ Caregiver & Doctor Directory
-
-- View doctor profiles
+## 👨‍⚕️ Doctor & Caregiver Directory
 - Specialty filtering (Cardiologist, Pediatrician, etc.)
+- Doctor profile view
 - Hospital association
-- Contact details
+- Contact details display
 
 <p align="center">
   <img src="screenshorts/caregiver_details.jpeg" width="280"/>
@@ -84,34 +90,46 @@ All in one smart mobile solution designed for Sri Lankan healthcare needs.
 ---
 
 ## ⏰ Smart Reminder System
-- Medicine alarm notifications
+- Medication alarms
 - Background AlarmManager
-- High-priority alerts
+- High-priority notifications
 
 ---
 
 ## 🚑 Emergency Access
-- Quick call emergency numbers
-- 1990 Suwa Seriya Ambulance
-- Fast-access interface
+- One-tap emergency call
+- 1990 Suwa Seriya Ambulance support
+- Fast-access emergency UI
 
 ---
 
-# 📸 Screenshots
+# 🗄 Database Structure (Firestore Example)
 
-## 🔐 Authentication
+```json
+users {
+  userId: {
+    name: "Kavindu",
+    email: "user@email.com",
+    role: "patient"
+  }
+}
 
-| Login | Register |
-|-------|----------|
-| <img src="screenshorts/login.jpeg" width="250"/> | <img src="screenshorts/register.jpeg" width="250"/> |
+hospitals {
+  hospitalId: {
+    name: "Asiri Hospital",
+    type: "Private",
+    contact: "+94xxxxxxxx"
+  }
+}
 
----
-
-## 🏠 Main Features
-
-| Dashboard | Caregiver | Online | Emergency | Reminder |
-|-----------|-----------|--------|-----------|----------|
-| <img src="screenshorts/dashboard.jpeg" width="180"/> | <img src="screenshorts/caregiver.jpeg" width="180"/> | <img src="screenshorts/online.jpeg" width="180"/> | <img src="screenshorts/emergency.jpeg" width="180"/> | <img src="screenshorts/reminder.jpeg" width="180"/> |
+doctors {
+  doctorId: {
+    name: "Dr. Example",
+    specialty: "Cardiologist",
+    hospital: "Asiri Hospital"
+  }
+}
+```
 
 ---
 
@@ -128,7 +146,7 @@ All in one smart mobile solution designed for Sri Lankan healthcare needs.
 
 ---
 
-# ⚙️ Installation Guide
+# ⚙️ Installation
 
 ```bash
 git clone https://github.com/sampleritgithubl/CareLanka.git
@@ -138,7 +156,7 @@ git clone https://github.com/sampleritgithubl/CareLanka.git
 2. Sync Gradle  
 3. Connect Firebase  
 4. Add `google-services.json`  
-5. Run on Emulator / Physical Device  
+5. Run project  
 
 ---
 
@@ -146,9 +164,9 @@ git clone https://github.com/sampleritgithubl/CareLanka.git
 
 - Firebase Authentication integration
 - Firestore CRUD operations
-- Android lifecycle management
-- Alarm & Notification handling
-- Healthcare data structuring
+- Android lifecycle handling
+- Background services & notifications
+- Real-world healthcare app architecture
 - Google Maps integration
 
 ---
@@ -157,7 +175,7 @@ git clone https://github.com/sampleritgithubl/CareLanka.git
 
 - Appointment booking system  
 - AI symptom checker  
-- Prescription storage  
+- Prescription cloud storage  
 - Sinhala & Tamil language support  
 
 ---
@@ -170,6 +188,12 @@ Kavindu Rasanjana
 
 ---
 
-# ⭐ Show Your Support
+# ⭐ Support
 
 If you like this project, please ⭐ star the repository!
+
+---
+
+<p align="center">
+  Made with ❤️ in Sri Lanka 🇱🇰
+</p>
