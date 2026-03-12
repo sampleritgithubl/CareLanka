@@ -55,7 +55,7 @@ This project demonstrates real-world mobile development skills including authent
 
 ---
 
-# 📸 Screenshots
+# 📸 Screenshot
 
 | Dashboard | Caregiver | Online | Emergency | Reminder |
 |-----------|-----------|--------|-----------|----------|
