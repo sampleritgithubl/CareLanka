@@ -1,71 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F4F8">
+    android:background="#F8FAFC">
 
-    <!-- Header Section (Patient Info) -->
-    <LinearLayout
+    <!-- Premium Header Section -->
+    <View
+        android:id="@+id/headerView"
         android:layout_width="match_parent"
-        android:layout_height="125dp"
-        android:background="@color/primaryBlue"
-        android:orientation="vertical"
-        android:padding="25dp"
-        android:elevation="10dp">
+        android:layout_height="220dp"
+        android:background="@drawable/header_background"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CareLanka Patient Portal"
-            android:textColor="#B3FFFFFF"
-            android:textSize="14sp"
-            android:textAllCaps="true"
-            android:letterSpacing="0.1"/>
+    <TextView
+        android:id="@+id/tvAppTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:text="CareLanka"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:fontFamily="sans-serif-black"
+        android:letterSpacing="-0.01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvWelcomeUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello, Welcome back! 👋"
-            android:textColor="@android:color/white"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_marginTop="5dp"/>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieHealth"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="4dp"
+        app:lottie_rawRes="@raw/health"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAppTitle"
+        app:layout_constraintStart_toEndOf="@+id/tvAppTitle"
+        app:layout_constraintTop_toTopOf="@+id/tvAppTitle" />
 
-        <TextView
-            android:id="@+id/tvUserEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="patient@email.com"
-            android:textColor="#CCFFFFFF"
-            android:textSize="16sp"
-            android:layout_marginTop="2dp"/>
-    </LinearLayout>
+    <TextView
+        android:id="@+id/tvWelcomeUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Your Health, Our Priority"
+        android:textColor="#E0F2FE"
+        android:textSize="14sp"
+        android:alpha="0.9"
+        app:layout_constraintStart_toStartOf="@+id/tvAppTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvAppTitle" />
 
-    <ScrollView
+    <TextView
+        android:id="@+id/tvUserEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="user@email.com"
+        android:textColor="#E0F2FE"
+        android:textSize="12sp"
+        android:alpha="0.7"
+        app:layout_constraintStart_toStartOf="@+id/tvAppTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcomeUser" />
+
+    <!-- Modern Stats Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardSummary"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:scrollbars="none">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="28dp"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="8dp"
+        app:strokeWidth="0dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserEmail">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:padding="24dp"
+            android:weightSum="2">
 
-            <!-- Services Section -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Upcoming"
+                    android:textColor="#64748B"
+                    android:textSize="11sp"
+                    android:textAllCaps="true"
+                    android:letterSpacing="0.1"
+                    android:fontFamily="sans-serif-medium" />
+                <TextView
+                    android:id="@+id/tvUpcomingCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02"
+                    android:textColor="@color/primaryBlue"
+                    android:textSize="26sp"
+                    android:fontFamily="sans-serif-black" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="#F1F5F9" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reports"
+                    android:textColor="#64748B"
+                    android:textSize="11sp"
+                    android:textAllCaps="true"
+                    android:letterSpacing="0.1"
+                    android:fontFamily="sans-serif-medium" />
+                <TextView
+                    android:id="@+id/tvReportCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="08"
+                    android:textColor="@color/primaryBlue"
+                    android:textSize="26sp"
+                    android:fontFamily="sans-serif-black" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:scrollbars="none"
+        android:paddingBottom="24dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardSummary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Our Healthcare Services"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#333333"
-                android:layout_marginBottom="15dp"/>
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="20dp"
+                android:text="Health Services"
+                android:textColor="#1E293B"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-black" />
 
             <GridLayout
                 android:layout_width="match_parent"
@@ -74,243 +177,262 @@
                 android:alignmentMode="alignMargins"
                 android:columnOrderPreserved="false">
 
-                <!-- Find Caregivers -->
-                <androidx.cardview.widget.CardView
+                <!-- Find Caregiver -->
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardFindCaregiver"
                     android:layout_width="0dp"
-                    android:layout_height="140dp"
+                    android:layout_height="160dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="4dp">
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="#FFFFFF">
                     <LinearLayout
-                        android:gravity="center"
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🤝" android:textSize="35sp"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Find Caregivers" android:textStyle="bold" android:layout_marginTop="10dp" android:textColor="@color/primaryBlue"/>
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <View android:layout_width="60dp" android:layout_height="60dp" android:background="@drawable/card_item_bg" android:backgroundTint="#EFF6FF" android:layout_gravity="center" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🤝" android:textSize="32sp" android:layout_marginTop="-45dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Caregivers"
+                            android:textColor="#1E293B"
+                            android:textSize="15sp"
+                            android:fontFamily="sans-serif-medium" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
                 <!-- Book Doctors -->
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardDoctors"
                     android:layout_width="0dp"
-                    android:layout_height="140dp"
+                    android:layout_height="160dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="4dp">
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="#FFFFFF">
                     <LinearLayout
-                        android:gravity="center"
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="👨‍⚕️" android:textSize="35sp"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Book Doctors" android:textStyle="bold" android:layout_marginTop="10dp" android:textColor="@color/primaryBlue"/>
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <View android:layout_width="60dp" android:layout_height="60dp" android:background="@drawable/card_item_bg" android:backgroundTint="#F0FDF4" android:layout_gravity="center" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="👨‍⚕️" android:textSize="32sp" android:layout_marginTop="-45dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Doctors"
+                            android:textColor="#1E293B"
+                            android:textSize="15sp"
+                            android:fontFamily="sans-serif-medium" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-                <!-- Hospital Directory -->
-                <androidx.cardview.widget.CardView
+                <!-- Hospitals -->
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardHospitals"
                     android:layout_width="0dp"
-                    android:layout_height="140dp"
+                    android:layout_height="160dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="4dp">
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="#FFFFFF">
                     <LinearLayout
-                        android:gravity="center"
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🏥" android:textSize="35sp"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Hospitals" android:textStyle="bold" android:layout_marginTop="10dp" android:textColor="@color/primaryBlue"/>
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <View android:layout_width="60dp" android:layout_height="60dp" android:background="@drawable/card_item_bg" android:backgroundTint="#FFF7ED" android:layout_gravity="center" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🏥" android:textSize="32sp" android:layout_marginTop="-45dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Hospitals"
+                            android:textColor="#1E293B"
+                            android:textSize="15sp"
+                            android:fontFamily="sans-serif-medium" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
                 <!-- Emergency -->
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardEmergency"
                     android:layout_width="0dp"
-                    android:layout_height="140dp"
+                    android:layout_height="160dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="4dp"
-                    app:cardBackgroundColor="#FFE0E0">
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="#FFFFFF">
                     <LinearLayout
-                        android:gravity="center"
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🆘" android:textSize="35sp"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Emergency" android:textStyle="bold" android:layout_marginTop="10dp" android:textColor="#D32F2F"/>
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <View android:layout_width="60dp" android:layout_height="60dp" android:background="@drawable/card_item_bg" android:backgroundTint="#FEF2F2" android:layout_gravity="center" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🚑" android:textSize="32sp" android:layout_marginTop="-45dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Emergency"
+                            android:textColor="#1E293B"
+                            android:textSize="15sp"
+                            android:fontFamily="sans-serif-medium" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-
-                <!-- Online Medicine Delivery Card -->
-                <androidx.cardview.widget.CardView
+                <!-- Medicine -->
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardMedicine"
                     android:layout_width="0dp"
-                    android:layout_height="140dp"
+                    android:layout_height="160dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="4dp">
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="#FFFFFF">
                     <LinearLayout
-                        android:gravity="center"
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#F1F8E9"> <!-- ලා කොළ පැහැති පසුබිමක් -->
-
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <View android:layout_width="60dp" android:layout_height="60dp" android:background="@drawable/card_item_bg" android:backgroundTint="#EFF6FF" android:layout_gravity="center" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💊" android:textSize="32sp" android:layout_marginTop="-45dp" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="💊"
-                            android:textSize="35sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Pharma Express"
-                            android:textStyle="bold"
-                            android:layout_marginTop="10dp"
-                            android:textColor="#2E7D32"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Order Medicine"
-                            android:textSize="10sp"
-                            android:textColor="#666666"/>
+                            android:layout_marginTop="20dp"
+                            android:text="Medicine"
+                            android:textColor="#1E293B"
+                            android:textSize="15sp"
+                            android:fontFamily="sans-serif-medium" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-
-
-
-                <!-- Pharma Express කාඩ් එකට පසුව මෙය GridLayout එක තුළ එක් කරන්න -->
-                <androidx.cardview.widget.CardView
+                <!-- Reminder -->
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardReminder"
                     android:layout_width="0dp"
-                    android:layout_height="140dp"
+                    android:layout_height="160dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="4dp">
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="#FFFFFF">
                     <LinearLayout
-                        android:gravity="center"
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#E3F2FD"> <!-- ලා නිල් පැහැති පසුබිමක් -->
-
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <View android:layout_width="60dp" android:layout_height="60dp" android:background="@drawable/card_item_bg" android:backgroundTint="#F0FDF4" android:layout_gravity="center" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⏰" android:textSize="32sp" android:layout_marginTop="-45dp" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="⏰"
-                            android:textSize="35sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Pill Reminder"
-                            android:textStyle="bold"
-                            android:layout_marginTop="10dp"
-                            android:textColor="@color/primaryBlue"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Set Alarms"
-                            android:textSize="10sp"
-                            android:textColor="#666666"/>
+                            android:layout_marginTop="20dp"
+                            android:text="Reminder"
+                            android:textColor="#1E293B"
+                            android:textSize="15sp"
+                            android:fontFamily="sans-serif-medium" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-
-
-
-
-
+                <!-- Hotels/Accommodation -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardAccommodation"
+                    android:layout_width="0dp"
+                    android:layout_height="160dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="#FFFFFF">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <View android:layout_width="60dp" android:layout_height="60dp" android:background="@drawable/card_item_bg" android:backgroundTint="#FDF2F8" android:layout_gravity="center" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🏨" android:textSize="32sp" android:layout_marginTop="-45dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Stays"
+                            android:textColor="#1E293B"
+                            android:textSize="15sp"
+                            android:fontFamily="sans-serif-medium" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
             </GridLayout>
 
-            <!-- Health Summary Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Recent Activity Summary"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#333333"
-                android:layout_marginTop="25dp"
-                android:layout_marginBottom="10dp"/>
-
-            <androidx.cardview.widget.CardView
+            <!-- Support Banner -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="3dp">
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:padding="20dp"
-                    android:gravity="center"
+                android:layout_margin="8dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E2E8F0"
+                app:cardBackgroundColor="#FFFFFF">
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+                    <TextView
+                        android:id="@+id/promoTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="24/7 Premium Support"
+                        android:fontFamily="sans-serif-black"
+                        android:textColor="@color/primaryBlue"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/promoTitle"
+                        android:layout_marginTop="4dp"
+                        android:text="We are here to help you anytime, anywhere."
+                        android:textColor="#64748B"
+                        android:textSize="13sp"/>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="03" android:textSize="26sp" android:textStyle="bold" android:textColor="@color/primaryBlue"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bookings" android:textSize="12sp" android:textColor="#666666"/>
-                    </LinearLayout>
-
-                    <View android:layout_width="1dp" android:layout_height="40dp" android:background="#DDDDDD"/>
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="01" android:textSize="26sp" android:textStyle="bold" android:textColor="@color/primaryBlue"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Reports" android:textSize="12sp" android:textColor="#666666"/>
-                    </LinearLayout>
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Logout Button -->
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogout"
-                android:text="Sign Out Safe"
-                android:layout_marginTop="35dp"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:backgroundTint="@color/primaryBlue"
-                android:textColor="@android:color/white"
-                android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="15dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CareLanka v1.0.0"
-                android:layout_gravity="center"
-                android:layout_marginTop="15dp"
-                android:textColor="#999999"
-                android:textSize="12sp"/>
+                android:layout_height="60dp"
+                android:layout_margin="8dp"
+                android:layout_marginTop="32dp"
+                android:text="LOG OUT"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-black"
+                android:backgroundTint="#F1F5F9"
+                app:rippleColor="#E2E8F0"
+                android:textColor="#64748B"
+                app:cornerRadius="20dp"
+                app:elevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E2E8F0"/>
 
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

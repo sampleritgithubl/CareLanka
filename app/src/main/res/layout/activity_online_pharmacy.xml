@@ -1,125 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F4F8">
+    android:background="#F8FAFC">
 
-    <LinearLayout
+    <!-- Header Section -->
+    <View
+        android:id="@+id/headerView"
         android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/header_background"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:text="Online Pharmacy"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pharma Express 🚚"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            android:textColor="@color/primaryBlue"/>
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fast medicine delivery to your doorstep"
+        android:textColor="#E0F2FE"
+        android:textSize="14sp"
+        android:alpha="0.9"
+        app:layout_constraintStart_toStartOf="@+id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Get your medicines delivered to your doorstep"
-            android:textColor="#666666"
-            android:layout_marginBottom="25dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:scrollbars="none"
+        android:paddingBottom="24dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
 
-        <!-- HealthGuard -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardHealthGuard"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="4dp">
-            <LinearLayout
-                android:padding="20dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- HealthGuard -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardHealthGuard"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🟢" android:textSize="20sp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Healthguard Pharmacy" android:textStyle="bold" android:textSize="18sp" android:layout_marginStart="15dp"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-
-        <!-- QuickMed Card -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardQuickMed"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="4dp">
-            <LinearLayout
-                android:padding="20dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🔵" android:textSize="20sp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="QuickMed.lk" android:textStyle="bold" android:textSize="18sp" android:layout_marginStart="15dp"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-
-        <!-- Laugfs Wellness -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardLaugfs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="4dp">
-            <LinearLayout
-                android:padding="20dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🟠" android:textSize="20sp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Laugfs Wellness" android:textStyle="bold" android:textSize="18sp" android:layout_marginStart="15dp"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- PickMe Flash -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardPickMeFlash"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="#FFF9C4"> <!-- කහ පැහැති පසුබිමක් -->
-            <LinearLayout
-                android:padding="20dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📦" android:textSize="25sp"/>
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="#FFFFFF">
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PickMe Flash" android:textStyle="bold" android:textSize="18sp" android:textColor="#000000"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Send prescription &amp; get medicine" android:textSize="12sp" android:textColor="#555555"/>
+                    android:padding="20dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#F0FDF4"
+                        app:strokeWidth="0dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="🟢" android:textSize="20sp"/>
+                    </com.google.android.material.card.MaterialCardView>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Healthguard Pharmacy" android:fontFamily="sans-serif-black" android:textSize="17sp" android:layout_marginStart="16dp" android:textColor="#1E293B"/>
                 </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Note: Please have a valid prescription ready."
-            android:layout_marginTop="30dp"
-            android:gravity="center"
-            android:textColor="#D32F2F"
-            android:textSize="12sp"
-            android:textStyle="italic"/>
+            <!-- QuickMed Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardQuickMed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="#FFFFFF">
+                <LinearLayout
+                    android:padding="20dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#EFF6FF"
+                        app:strokeWidth="0dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="🔵" android:textSize="20sp"/>
+                    </com.google.android.material.card.MaterialCardView>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="QuickMed.lk" android:fontFamily="sans-serif-black" android:textSize="17sp" android:layout_marginStart="16dp" android:textColor="#1E293B"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-    </LinearLayout>
-</ScrollView>
+            <!-- Laugfs Wellness -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLaugfs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="#FFFFFF">
+                <LinearLayout
+                    android:padding="20dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#FFF7ED"
+                        app:strokeWidth="0dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="🟠" android:textSize="20sp"/>
+                    </com.google.android.material.card.MaterialCardView>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Laugfs Wellness" android:fontFamily="sans-serif-black" android:textSize="17sp" android:layout_marginStart="16dp" android:textColor="#1E293B"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- PickMe Flash -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPickMeFlash"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="#FEFCE8">
+                <LinearLayout
+                    android:padding="20dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#FEF9C3"
+                        app:strokeWidth="0dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="📦" android:textSize="25sp"/>
+                    </com.google.android.material.card.MaterialCardView>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PickMe Flash" android:fontFamily="sans-serif-black" android:textSize="17sp" android:textColor="#1E293B"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Send prescription &amp; get medicine" android:textSize="12sp" android:fontFamily="sans-serif-medium" android:textColor="#71717A"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Note: Please have a valid prescription ready."
+                android:layout_marginTop="32dp"
+                android:gravity="center"
+                android:textColor="#EF4444"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif-medium"
+                android:alpha="0.8"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

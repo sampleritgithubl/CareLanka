@@ -1,52 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp"
-    android:background="#FFFFFF">
+    android:background="#F8FAFC">
+
+    <!-- Header Section -->
+    <View
+        android:id="@+id/headerView"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/header_background"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Pill Reminder ⏰"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@color/primaryBlue"
-        android:layout_marginBottom="30dp"/>
-
-    <EditText
-        android:id="@+id/etMedName"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Medicine Name (e.g. Panadol)"
-        android:background="@drawable/edit_text_bg"
-        android:paddingStart="15dp"
-        android:layout_marginBottom="20dp"/>
-
-    <Button
-        android:id="@+id/btnSelectTime"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:text="Select Time"
-        android:backgroundTint="#EEEEEE"
-        android:textColor="#333333"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:text="Med Reminder"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvSelectedTime"
+        android:id="@+id/tvSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No time selected"
-        android:layout_gravity="center"
-        android:layout_marginBottom="30dp"/>
+        android:text="Never miss your medicine again"
+        android:textColor="#E0F2FE"
+        android:textSize="14sp"
+        android:alpha="0.9"
+        app:layout_constraintStart_toStartOf="@+id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
-    <Button
-        android:id="@+id/btnSetReminder"
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="SET REMINDER"
-        android:backgroundTint="@color/primaryBlue"
-        android:textColor="#FFFFFF"/>
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="8dp"
+        app:strokeWidth="0dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add New Reminder"
+                android:textColor="#1E293B"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-black"
+                android:layout_marginBottom="24dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Medicine Name"
+                android:textColorHint="#94A3B8"
+                app:boxStrokeColor="@color/primaryBlue"
+                app:startIconDrawable="@android:drawable/ic_menu_edit"
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxCornerRadiusBottomEnd="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMedName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="#1E293B"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSelectTime"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                android:text="Select Time"
+                android:fontFamily="sans-serif-black"
+                app:cornerRadius="16dp"
+                app:icon="@android:drawable/ic_menu_recent_history"/>
+
+            <TextView
+                android:id="@+id/tvSelectedTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No time selected"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:textColor="#64748B"
+                android:fontFamily="sans-serif-medium"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSetReminder"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="32dp"
+                android:text="SET REMINDER"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-black"
+                android:backgroundTint="@color/primaryBlue"
+                app:cornerRadius="18dp"
+                app:elevation="4dp"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

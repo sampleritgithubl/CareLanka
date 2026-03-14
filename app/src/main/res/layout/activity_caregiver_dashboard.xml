@@ -1,143 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#F0F4F0">
+    android:background="#F8FAFC">
 
-    <!-- Header Section -->
-    <LinearLayout
+    <!-- Premium Header Section -->
+    <View
+        android:id="@+id/headerView"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:background="#2E7D32"
-        android:orientation="vertical"
-        android:padding="25dp"
-        android:elevation="8dp">
+        android:layout_height="220dp"
+        android:background="@drawable/header_background"
+        android:backgroundTint="#10B981"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tvAppTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:text="Caregiver Pro"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:fontFamily="sans-serif-black"
+        android:letterSpacing="-0.01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Caregiver Pro"
-                    android:textColor="#B3FFFFFF"
-                    android:textSize="12sp"
-                    android:textAllCaps="true"
-                    android:letterSpacing="0.1"/>
+    <TextView
+        android:id="@+id/tvUserEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="caregiver@email.com"
+        android:textColor="#ECFDF5"
+        android:textSize="14sp"
+        android:alpha="0.9"
+        app:layout_constraintStart_toStartOf="@+id/tvAppTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvAppTitle" />
 
-                <TextView
-                    android:id="@+id/tvUserEmail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="caregiver@email.com"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:layout_marginTop="5dp"/>
-            </LinearLayout>
+    <!-- Status Badge -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/tvUserEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvAppTitle">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp"
+            android:text="ONLINE ●"
+            android:textColor="#10B981"
+            android:textSize="11sp"
+            android:fontFamily="sans-serif-black" />
+    </com.google.android.material.card.MaterialCardView>
 
-            <!-- Availability Switch (Optional UI) -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:text="Online ●"
-                android:textColor="#4CAF50"
-                android:background="#FFFFFF"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp"
-                android:textStyle="bold"
-                android:textSize="12sp"/>
-        </RelativeLayout>
+    <!-- Stats Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardStats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="28dp"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="8dp"
+        app:strokeWidth="0dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserEmail">
 
-        <!-- Stats Row -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="24dp"
+            android:weightSum="2">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:orientation="vertical">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Today's Tasks"
-                    android:textColor="#CCFFFFFF"
-                    android:textSize="12sp"/>
+                    android:textColor="#64748B"
+                    android:textSize="11sp"
+                    android:textAllCaps="true"
+                    android:letterSpacing="0.1"
+                    android:fontFamily="sans-serif-medium" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="04"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textColor="#10B981"
+                    android:textSize="26sp"
+                    android:fontFamily="sans-serif-black" />
             </LinearLayout>
 
-            <View android:layout_width="1dp" android:layout_height="30dp" android:background="#66FFFFFF"/>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="#F1F5F9" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:paddingLeft="20dp"
+                android:gravity="center"
                 android:orientation="vertical">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Total Earnings"
-                    android:textColor="#CCFFFFFF"
-                    android:textSize="12sp"/>
+                    android:text="Earnings"
+                    android:textColor="#64748B"
+                    android:textSize="11sp"
+                    android:textAllCaps="true"
+                    android:letterSpacing="0.1"
+                    android:fontFamily="sans-serif-medium" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="LKR 12,500"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:text="LKR 12.5k"
+                    android:textColor="#10B981"
+                    android:textSize="22sp"
+                    android:fontFamily="sans-serif-black" />
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:scrollbars="none">
+        android:layout_marginTop="8dp"
+        android:scrollbars="none"
+        android:paddingBottom="24dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardStats">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="24dp">
 
-            <!-- New Requests Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Incoming Requests"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#333333"
-                android:layout_marginBottom="10dp"/>
-
-            <androidx.cardview.widget.CardView
+            <!-- Requests Section -->
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardNewRequests"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="4dp"
-                android:layout_marginBottom="25dp">
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1.5dp"
+                app:strokeColor="#ECFDF5"
+                app:cardBackgroundColor="#F0FDF4">
                 <LinearLayout
                     android:padding="20dp"
                     android:orientation="horizontal"
@@ -148,43 +178,47 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="📩"
-                        android:textSize="30sp"/>
+                        android:textSize="32sp"/>
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginStart="16dp"
                         android:orientation="vertical">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="3 New Service Inquiries"
-                            android:textStyle="bold"
-                            android:textColor="#2E7D32"/>
+                            android:text="3 New Requests"
+                            android:fontFamily="sans-serif-black"
+                            android:textColor="#065F46"
+                            android:textSize="17sp"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Patients are waiting for your response"
-                            android:textSize="12sp"/>
+                            android:text="Patients are waiting for you"
+                            android:textSize="12sp"
+                            android:fontFamily="sans-serif-medium"
+                            android:textColor="#047857"/>
                     </LinearLayout>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="View >"
-                        android:textColor="#2E7D32"
-                        android:textStyle="bold"/>
+                        android:textColor="#059669"
+                        android:textSize="13sp"
+                        android:fontFamily="sans-serif-black"/>
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <!-- Caregiver Tools Grid -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Caregiver Tools"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="20dp"
+                android:text="Tools &amp; Services"
+                android:textColor="#1E293B"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#333333"
-                android:layout_marginBottom="15dp"/>
+                android:fontFamily="sans-serif-black" />
 
             <GridLayout
                 android:layout_width="match_parent"
@@ -193,76 +227,97 @@
                 android:alignmentMode="alignMargins"
                 android:columnOrderPreserved="false">
 
-                <!-- My Schedule -->
-                <androidx.cardview.widget.CardView
+                <!-- Schedule -->
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardSchedule"
                     android:layout_width="0dp"
-                    android:layout_height="130dp"
+                    android:layout_height="140dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    app:cardCornerRadius="15dp">
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="#FFFFFF">
                     <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📅" android:textSize="30sp"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="My Schedule" android:textStyle="bold" android:layout_marginTop="8dp"/>
+                        <View android:layout_width="54dp" android:layout_height="54dp" android:background="@drawable/card_item_bg" android:backgroundTint="#F0FDF4" android:layout_gravity="center" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📅" android:textSize="28sp" android:layout_marginTop="-42dp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Schedule" android:fontFamily="sans-serif-black" android:textColor="#1E293B" android:layout_marginTop="20dp" android:textSize="14sp"/>
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-                <!-- Patient Records -->
-                <androidx.cardview.widget.CardView
+                <!-- Patients -->
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardPatients"
                     android:layout_width="0dp"
-                    android:layout_height="130dp"
+                    android:layout_height="140dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    app:cardCornerRadius="15dp">
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="#FFFFFF">
                     <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="👥" android:textSize="30sp"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="My Patients" android:textStyle="bold" android:layout_marginTop="8dp"/>
+                        <View android:layout_width="54dp" android:layout_height="54dp" android:background="@drawable/card_item_bg" android:backgroundTint="#EFF6FF" android:layout_gravity="center" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="👥" android:textSize="28sp" android:layout_marginTop="-42dp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Patients" android:fontFamily="sans-serif-black" android:textColor="#1E293B" android:layout_marginTop="20dp" android:textSize="14sp"/>
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
                 <!-- Reviews -->
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardReviews"
                     android:layout_width="0dp"
-                    android:layout_height="130dp"
+                    android:layout_height="140dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    app:cardCornerRadius="15dp">
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="#FFFFFF">
                     <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⭐" android:textSize="30sp"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Reviews" android:textStyle="bold" android:layout_marginTop="8dp"/>
+                        <View android:layout_width="54dp" android:layout_height="54dp" android:background="@drawable/card_item_bg" android:backgroundTint="#FFF7ED" android:layout_gravity="center" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⭐" android:textSize="28sp" android:layout_marginTop="-42dp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Reviews" android:fontFamily="sans-serif-black" android:textColor="#1E293B" android:layout_marginTop="20dp" android:textSize="14sp"/>
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
                 <!-- Wallet -->
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardWallet"
                     android:layout_width="0dp"
-                    android:layout_height="130dp"
+                    android:layout_height="140dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    app:cardCornerRadius="15dp">
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="#FFFFFF">
                     <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💰" android:textSize="30sp"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Wallet" android:textStyle="bold" android:layout_marginTop="8dp"/>
+                        <View android:layout_width="54dp" android:layout_height="54dp" android:background="@drawable/card_item_bg" android:backgroundTint="#FEF2F2" android:layout_gravity="center" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💰" android:textSize="28sp" android:layout_marginTop="-42dp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Wallet" android:fontFamily="sans-serif-black" android:textColor="#1E293B" android:layout_marginTop="20dp" android:textSize="14sp"/>
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
             </GridLayout>
 
-            <!-- Logout Button -->
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogout"
-                android:text="Sign Out"
-                android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:backgroundTint="#2E7D32"
-                android:textColor="@android:color/white"
-                android:textAllCaps="false"
-                app:cornerRadius="15dp"/>
+                android:layout_height="60dp"
+                android:layout_margin="8dp"
+                android:layout_marginTop="32dp"
+                android:text="SIGN OUT"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-black"
+                android:backgroundTint="#F1F5F9"
+                app:rippleColor="#E2E8F0"
+                android:textColor="#64748B"
+                app:cornerRadius="20dp"
+                app:elevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E2E8F0"/>
 
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

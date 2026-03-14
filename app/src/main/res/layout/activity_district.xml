@@ -1,49 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#F0F4F8">
+    android:background="#F8FAFC">
 
     <!-- Header Section -->
-    <LinearLayout
+    <View
+        android:id="@+id/headerView"
         android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/header_background"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/primaryBlue"
-        android:padding="25dp"
-        android:elevation="8dp"
-        android:orientation="vertical">
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:text="Districts"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hospital Directory"
-            android:textColor="#B3FFFFFF"
-            android:textSize="12sp"
-            android:textAllCaps="true"
-            android:letterSpacing="0.1"/>
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select your location to find hospitals"
+        android:textColor="#E0F2FE"
+        android:textSize="14sp"
+        android:alpha="0.9"
+        app:layout_constraintStart_toStartOf="@+id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Select Your District"
-            android:textColor="@android:color/white"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_marginTop="5dp"/>
-    </LinearLayout>
-
-    <!-- Near Me Card (අලුතින් එක් කළ කොටස) -->
-    <androidx.cardview.widget.CardView
+    <!-- Near Me Card -->
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardNearMe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        app:cardCornerRadius="15dp"
-        app:cardBackgroundColor="#E8F5E9"
-        app:cardElevation="6dp"
-        android:foreground="?attr/selectableItemBackground">
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8dp"
+        app:strokeWidth="0dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,45 +58,65 @@
             android:padding="20dp"
             android:gravity="center_vertical">
 
-            <TextView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:text="📍"
-                android:textSize="30sp"
-                android:gravity="center"
-                android:background="#C8E6C9" />
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#F0FDF4"
+                app:strokeWidth="0dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="📍"
+                    android:textSize="24sp"/>
+            </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:orientation="vertical"
-                android:layout_marginStart="15dp">
+                android:layout_marginStart="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Find Hospitals Near Me"
-                    android:textColor="#2E7D32"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:text="Find Near Me"
+                    android:textColor="#1E293B"
+                    android:textSize="17sp"
+                    android:fontFamily="sans-serif-black"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Locate nearest medical centers"
-                    android:textColor="#666666"
-                    android:textSize="13sp"/>
+                    android:text="Locate nearest hospitals"
+                    android:textColor="#64748B"
+                    android:textSize="13sp"
+                    android:fontFamily="sans-serif-medium"/>
             </LinearLayout>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/ic_media_play"
+                app:tint="#CBD5E1"/>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- District List -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerDistricts"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingHorizontal="12dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="24dp"
         android:clipToPadding="false"
-        android:scrollbars="vertical"/>
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardNearMe"
+        tools:listitem="@layout/item_district"/>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

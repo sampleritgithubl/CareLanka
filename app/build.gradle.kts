@@ -42,6 +42,9 @@ dependencies {
     implementation(libs.recyclerview)
     implementation(libs.cardview)
 
+
+    implementation ("com.airbnb.android:lottie:6.4.0")
+
     // Firebase (BOM භාවිතා කර අලුත්ම අනුවාද ලබාගැනීම)
     implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
     implementation("com.google.firebase:firebase-auth")

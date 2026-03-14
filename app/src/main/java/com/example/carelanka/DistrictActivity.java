@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
+import com.google.android.material.card.MaterialCardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
@@ -15,7 +15,7 @@ import java.util.List;
 public class DistrictActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    CardView cardNearMe;
+    MaterialCardView cardNearMe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +38,8 @@ public class DistrictActivity extends AppCompatActivity {
                 "Polonnaruwa", "Puttalam", "Ratnapura", "Trincomalee", "Vavuniya"
         );
 
-        // දිස්ත්‍රික්ක සඳහා Adapter එක සම්බන්ධ කිරීම
-        recyclerView.setAdapter(new SpecialtyAdapter(districts, district -> {
+        // DistrictAdapter භාවිතා කිරීම (දැන් අලුත් UI එක මෙයින් පෙන්වයි)
+        recyclerView.setAdapter(new DistrictAdapter(districts, district -> {
             Intent intent = new Intent(this, HospitalListActivity.class);
             intent.putExtra("district", district);
             startActivity(intent);
