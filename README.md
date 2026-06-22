@@ -1,217 +1,152 @@
+# 🇱🇰 CareLanka — AI-Powered Healthcare for Sri Lanka
 
-# 🌿 CareLanka – Digital Healthcare Companion 🇱🇰
+> An all-in-one mobile healthcare platform that combines Google Gemini AI with practical, everyday health tools — built to make medical guidance accessible to every Sri Lankan, in their own language.
 
-<p align="center">
-  <img src="screenshorts/app_logo.png" width="120"/>
-</p>
-
-<p align="center">
-  <b>Smart • Reliable • Sri Lankan Healthcare at Your Fingertips</b>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Language-Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Backend-Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Database-Firestore-FFCA28?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Region-Sri_Lanka-8D153A?style=for-the-badge"/>
-</p>
+[![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?logo=android)](#)
+[![Language](https://img.shields.io/badge/Language-Java-orange?logo=java)](#)
+[![AI](https://img.shields.io/badge/AI-Google%20Gemini-4285F4?logo=google)](#)
+[![Backend](https://img.shields.io/badge/Backend-Firebase-FFCA28?logo=firebase)](#)
 
 ---
 
-## 🌍 About the Project
+## 📖 Overview
 
-CareLanka is a Sri Lanka-focused digital healthcare Android application built using Java & Firebase.
+CareLanka is a university final project built to solve a real problem in Sri Lankan healthcare: **language barriers, scattered information, and limited access to quick medical guidance**, especially in rural areas.
 
-It connects patients, caregivers, hospitals, and pharmacies into one centralized healthcare ecosystem.
-
-This project demonstrates real-world mobile development skills including authentication, cloud database integration, notifications, and location services.
+The app brings together an AI medical chatbot, AI-powered prescription and skin analysis, doctor/hospital discovery, emergency SOS, caregiver matching, and medication reminders — all wrapped in a single Android application that speaks Sinhala, Tamil, and English natively.
 
 ---
 
-## 📥 Download CareLanka
+## ✨ Key Features
 
-[Download Latest Version](https://github.com/sampleritgithubl/CareLanka/releases/latest)
-
----
-
-# 🎥 Live App Preview
-
-<p align="center">
-  <img src="screenshorts/demo.gif" width="320"/>
-</p>
-
----
-
-# 🚀 Project Highlights
-
-✔ Secure Firebase Authentication  
-✔ Real-time Firestore Database  
-✔ Hospital & Doctor Directory  
-✔ Google Maps Integration  
-✔ Emergency Quick Access  
-✔ Medicine Reminder System  
-✔ Clean Material UI Design  
+| Feature | Description |
+|---|---|
+| 🤖 **Multilingual AI Chatbot** | A Gemini-powered health assistant that understands and replies in Sinhala, Tamil, or English — no manual translation needed. Detects emergencies and recommends calling 1990 (Suwa Seriya) when symptoms sound serious. |
+| 📄 **Prescription AI Reader** | Scans a photo of a handwritten or printed prescription, extracts medicine names and dosages, and explains them in Sinhala — then **automatically schedules medication reminders**. |
+| 🔍 **Smart Skin Analysis** | Upload a photo of a skin concern and get a preliminary, plain-language AI observation — always paired with a clear medical disclaimer and a recommendation to see a dermatologist. |
+| 🏥 **Doctor & Hospital Finder** | Search and filter specialists and hospitals across Sri Lanka by district. |
+| 🚨 **SOS / Emergency Panic Button** | One-tap emergency alert to notify relevant contacts/services instantly. |
+| 🤝 **Caregiver Matching** | Find experienced, vetted caregivers for elderly or recovering patients. |
+| ⏰ **Medication Reminders** | Smart, schedulable reminders so doses are never missed. |
+| 💊 **Online Pharmacy Integration** | Order medicines for home delivery directly from the app. |
+| 🌍 **Full App Localization** | Every screen — not just the AI features — works in Sinhala, Tamil, and English using Google ML Kit. |
 
 ---
 
-# 📸 Screenshot
+## 🛠️ Tech Stack
 
-| Dashboard | Caregiver | Online | Emergency | Reminder |
-|-----------|-----------|--------|-----------|----------|
-| <img src="screenshorts/dashboard.jpeg" width="180"/> | <img src="screenshorts/caregiver.jpeg" width="180"/> | <img src="screenshorts/online.jpeg" width="180"/> | <img src="screenshorts/emergency.jpeg" width="180"/> | <img src="screenshorts/reminder.jpeg" width="180"/> |
+**Language:** Java
 
----
+**AI / ML**
+- Google Gemini API (`gemini-2.5-flash`) — via direct REST calls (OkHttp)
+- Google ML Kit — Language Identification & On-Device Translation
 
-# 🏥 Core Features
+**Backend**
+- Firebase Authentication
+- Firebase Firestore
+- Firebase Realtime Database
 
-## 🔐 Authentication
-- Email & Password Login
-- Secure Registration
-- Role-based user access
+**Architecture**
+- MVVM (Model-View-ViewModel)
+- Hilt (Dependency Injection)
+- WorkManager (background scheduling for reminders)
 
----
-
-## 🏥 Find Hospitals
-- Government & Private Hospitals
-- Colombo District coverage
-- Direct call feature
-- Google Maps navigation
-
-<p align="center">
-  <img src="screenshorts/find_hospital.jpeg" width="280"/>
-</p>
+**Networking**
+- OkHttp (REST API calls to Gemini)
+- org.json (request/response parsing)
 
 ---
 
-## 👨‍⚕️ Doctor & Caregiver Directory
-- Specialty filtering (Cardiologist, Pediatrician, etc.)
-- Doctor profile view
-- Hospital association
-- Contact details display
+## 🧠 Why Direct REST API Instead of the Gemini SDK?
 
-<p align="center">
-  <img src="screenshorts/caregiver_details.jpeg" width="280"/>
-</p>
+An early version of this project used the official `generativeai` Android SDK. During development, Google **deprecated and shut down** the `gemini-1.5-flash` model family the SDK depended on, and the SDK itself had a recurring response-parsing bug (`kotlinx.serialization.MissingFieldException`).
+
+To keep the app stable and future-proof, all Gemini calls were rebuilt as **direct REST API calls using OkHttp**, talking to `gemini-2.5-flash` directly over `https://generativelanguage.googleapis.com`. This removes the SDK dependency entirely and gives full control over request/response handling, error states, and model upgrades going forward.
 
 ---
 
-## 💊 Online Medicine Services
-- Healthguard
-- Laugfs Wellness
-- QuickMed.lk
-- PickMe Flash Delivery
+## 📱 Screenshots
+
+> _Add screenshots here — see the "Adding Screenshots" section below._
+
+| Home | AI Chatbot | Prescription Reader | Skin Analysis |
+|---|---|---|---|
+| ![Home](docs/screenshots/home.png) | ![Chatbot](docs/screenshots/chatbot.png) | ![Prescription](docs/screenshots/prescription.png) | ![Skin](docs/screenshots/skin.png) |
 
 ---
 
-## ⏰ Smart Reminder System
-- Medication alarms
-- Background AlarmManager
-- High-priority notifications
+## 🎥 Demo Video
+
+[![Watch the demo](docs/screenshots/video_thumbnail.png)](#)
+<!-- Replace # with your YouTube/Drive link once uploaded -->
 
 ---
 
-## 🚑 Emergency Access
-- One-tap emergency call
-- 1990 Suwa Seriya Ambulance support
-- Fast-access emergency UI
+## 🚀 Getting Started
+
+### Prerequisites
+- Android Studio (latest stable)
+- JDK 11+
+- A Google Gemini API key ([Google AI Studio](https://aistudio.google.com/app/apikey))
+- A Firebase project (for Auth/Firestore/Realtime DB features)
+
+### Setup
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/CareLanka.git
+   cd CareLanka
+   ```
+
+2. Add your Gemini API key to `local.properties` (create this file in the project root if it doesn't exist):
+   ```properties
+   GEMINI_API_KEY=your_api_key_here
+   ```
+
+3. Add your own `google-services.json` (Firebase config) to the `app/` directory.
+
+4. Open the project in Android Studio, let Gradle sync, then Run ▶️
+
+> ⚠️ Never commit `local.properties` or `google-services.json` — both are git-ignored by default in this repo.
 
 ---
 
-# 🗄 Database Structure (Firestore Example)
+## 📂 Project Structure
 
-```json
-users {
-  userId: {
-    name: "Kavindu",
-    email: "user@email.com",
-    role: "patient"
-  }
-}
-
-hospitals {
-  hospitalId: {
-    name: "Asiri Hospital",
-    type: "Private",
-    contact: "+94xxxxxxxx"
-  }
-}
-
-doctors {
-  doctorId: {
-    name: "Dr. Example",
-    specialty: "Cardiologist",
-    hospital: "Asiri Hospital"
-  }
-}
-````
-
----
-
-# 🛠 Tech Stack
-
-| Layer          | Technology             |
-| -------------- | ---------------------- |
-| Language       | Java                   |
-| UI             | XML + Material Design  |
-| Backend        | Firebase Firestore     |
-| Authentication | Firebase Auth          |
-| Notifications  | AlarmManager           |
-| Maps           | Google Maps Intent API |
-
----
-
-# ⚙️ Installation
-
-```bash
-git clone https://github.com/sampleritgithubl/CareLanka.git
+```
+app/src/main/java/com/example/carelanka/
+├── PrescriptionAIActivity.java     # AI prescription scanning + auto reminders
+├── MultilingualAIActivity.java     # AI chatbot (Sinhala/Tamil/English)
+├── SkinAnalysisActivity.java       # AI skin condition analysis
+├── ChatAdapter.java / ChatMessage.java
+├── AlarmReceiver.java / ReminderActivity.java
+└── ...
 ```
 
-1. Open in Android Studio
-2. Sync Gradle
-3. Connect Firebase
-4. Add `google-services.json`
-5. Run project
+---
+
+## 🎓 Academic Context
+
+This project was developed as a final-year individual project for [Your Module/Course Name] at [Your University Name]. It demonstrates practical application of:
+- Mobile application development (Android, Java)
+- Generative AI integration (Gemini API)
+- On-device machine learning (ML Kit)
+- Cloud backend services (Firebase)
+- Software architecture patterns (MVVM, DI)
 
 ---
 
-# 🧠 What I Learned
+## 👤 Author
 
-* Firebase Authentication integration
-* Firestore CRUD operations
-* Android lifecycle handling
-* Background services & notifications
-* Real-world healthcare app architecture
-* Google Maps integration
+**Kavindu Rasanjana**
+Full Stack Developer | Sri Lanka
 
----
-
-# 📈 Future Improvements
-
-* Appointment booking system
-* AI symptom checker
-* Prescription cloud storage
-* Sinhala & Tamil language support
+- GitHub: [@your-username](https://github.com/your-username)
+- LinkedIn: [your-linkedin](https://linkedin.com/in/your-linkedin)
+- Portfolio: [kavindu-rasanjana.me](https://kavindu-rasanjana.me)
 
 ---
 
-# 👨‍💻 Developer
+## 📄 License
 
-Kavindu Rasanjana
-📧 [kavindu20rasanjana@gmail.com](mailto:kavindu20rasanjana@gmail.com)
-🔗 [https://github.com/sampleritgithubl](https://github.com/sampleritgithubl)
-
----
-
-# ⭐ Support
-
-If you like this project, please ⭐ star the repository!
-
----
-
-<p align="center">
-  Made with ❤️ in Sri Lanka 🇱🇰
-</p>
-
-
-
+This project is submitted as academic coursework. Feel free to explore the code for learning purposes.
