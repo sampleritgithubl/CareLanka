@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">CareLanka</string>
+    <string name="login_title">ඇතුල් වන්න</string>
+
+    <!-- Redesigned UI Strings -->
+    <string name="login_subtitle">ඔබේ සෞඛ්‍ය ගමන දිගටම කරගෙන යාමට පුරනය වන්න</string>
+    <string name="label_email">විද්‍යුත් තැපෑල</string>
+    <string name="label_password">මුරපදය</string>
+    <string name="btn_login">ඇතුල් වන්න</string>
+    <string name="forgot_password">මුරපදය අමතකද?</string>
+    <string name="no_account">ගිණුමක් නැද්ද? </string>
+    <string name="action_sign_up">ලියාපදිංචි වන්න</string>
+
+    <string name="register_title">ගිණුමක් සාදන්න</string>
+    <string name="register_subtitle">වඩා හොඳ සෞඛ්‍ය අත්දැකීමක් සඳහා CareLanka හා සම්බන්ධ වන්න</string>
+    <string name="label_full_name">සම්පූර්ණ නම</string>
+    <string name="label_phone">දුරකථන අංකය</string>
+    <string name="label_confirm_password">මුරපදය තහවුරු කරන්න</string>
+    <string name="label_select_role">ඔබේ භූමිකාව තෝරන්න</string>
+    <string name="role_patient">රෝගියා</string>
+    <string name="role_caregiver">සත්කාරකයා</string>
+    <string name="btn_register">ගිණුමක් සාදන්න</string>
+    <string name="already_have_account">දැනටමත් ගිණුමක් තිබේද? </string>
+    <string name="action_login">ඇතුල් වන්න</string>
+    <string name="terms_and_conditions">මම නියමයන් සහ කොන්දේසි වලට එකඟ වෙමි</string>
+
+    <string name="greeting_morning">සුභ උදෑසනක්,</string>
+    <string name="section_quick_access">ඉක්මන් පිවිසුම්</string>
+    <string name="section_appointments">ඉදිරි හමුවීම්</string>
+    <string name="view_all">සියල්ල බලන්න</string>
+    <string name="support_banner_title">24/7 වෛද්‍ය සහාය</string>
+    <string name="support_banner_desc">ඕනෑම වේලාවක, ඕනෑම තැනක අපගේ වෛද්‍ය ප්‍රවීණයන්ගෙන් ක්ෂණික සහාය ලබා ගන්න.</string>
+    <string name="contact_now">දැන් සම්බන්ධ වන්න</string>
+
+    <!-- Legacy strings kept for compatibility if needed -->
+    <string name="email_hint">විද්‍යුත් තැපෑල</string>
+    <string name="password_hint">මුරපදය</string>
+    <string name="login_button">ඇතුල් වන්න</string>
+    <string name="register_now">දැන් ලියාපදිංචි වන්න</string>
+    <string name="new_user_prompt">ඔබ CareLanka වෙත අලුත්ද? </string>
+    <string name="subtitle">ඔබේ සාක්කුවේ සිටින විශේෂඥ සෞඛ්‍ය සේවාව</string>
+</resources>

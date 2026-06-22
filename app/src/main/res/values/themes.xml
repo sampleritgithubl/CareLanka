@@ -1,9 +1,82 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.CareLanka" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.CareLanka" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Primary branding colors. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/onPrimary</item>
+        <item name="colorPrimaryContainer">@color/primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/onPrimaryContainer</item>
+
+        <!-- Secondary branding colors. -->
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/onSecondary</item>
+        <item name="colorSecondaryContainer">@color/secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/onSecondaryContainer</item>
+
+        <!-- Tertiary branding colors. -->
+        <item name="colorTertiary">@color/tertiary</item>
+        <item name="colorOnTertiary">@color/onTertiary</item>
+        <item name="colorTertiaryContainer">@color/tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/onTertiaryContainer</item>
+
+        <!-- Status bar and Navigation bar -->
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/white</item>
+
+        <!-- Background and Surface -->
+        <item name="android:windowBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/onSurface</item>
+        <item name="colorSurfaceVariant">@color/surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/onSurfaceVariant</item>
+        <item name="colorOutline">@color/outline</item>
+
+        <!-- Material 3 Typography -->
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.CareLanka.HeadlineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.CareLanka.HeadlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.CareLanka.HeadlineSmall</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.CareLanka.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.CareLanka.BodyMedium</item>
     </style>
 
     <style name="Theme.CareLanka" parent="Base.Theme.CareLanka" />
+
+    <!-- Typography Styles -->
+    <style name="TextAppearance.CareLanka.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="android:textSize">@dimen/text_headline_large</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/onSurface</item>
+    </style>
+
+    <style name="TextAppearance.CareLanka.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textSize">@dimen/text_headline_medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/onSurface</item>
+    </style>
+
+    <style name="TextAppearance.CareLanka.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textSize">@dimen/text_headline_small</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/onSurface</item>
+    </style>
+
+    <style name="TextAppearance.CareLanka.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textSize">@dimen/text_body_large</item>
+        <item name="android:textColor">@color/onSurface</item>
+    </style>
+
+    <style name="TextAppearance.CareLanka.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:textColor">@color/onSurfaceVariant</item>
+    </style>
+
+    <!-- Custom Button Style -->
+    <style name="Widget.CareLanka.Button" parent="Widget.Material3.Button">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">@dimen/corner_radius_medium</item>
+        <item name="android:minHeight">@dimen/button_height</item>
+    </style>
+
 </resources>

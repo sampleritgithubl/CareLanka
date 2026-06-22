@@ -1,265 +1,245 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
+    android:background="@color/background">
 
-    <!-- 1. Background Image -->
+    <!-- Background Image with Overlay -->
     <ImageView
-        android:id="@+id/ivBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/register" />
+        android:src="@drawable/bg_splash_gradient"
+        android:alpha="0.1" />
 
-    <!-- 2. Professional Gradient Overlay -->
     <View
+        android:id="@+id/headerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/login_overlay_gradient" />
+        android:layout_height="220dp"
+        android:background="@drawable/bg_splash_gradient"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ScrollView
+    <!-- Decorative Circle -->
+    <View
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/bg_circle_overlay"
+        android:alpha="0.1"
+        android:layout_marginTop="-75dp"
+        android:layout_marginEnd="-50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Back"
+        android:src="@drawable/baseline_arrow_forward_24"
+        android:rotation="180"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/tvHeaderTitle"
+        style="@style/TextAppearance.CareLanka.HeadlineMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/register_title"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/btnBack"
+        app:layout_constraintStart_toEndOf="@id/btnBack"
+        app:layout_constraintTop_toTopOf="@id/btnBack" />
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:scrollbars="none">
+        android:layout_height="0dp"
+        android:layout_marginTop="-40dp"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerView">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:fillViewport="true">
 
-            <!-- 3. Header Section -->
-            <ImageView
-                android:id="@+id/topLogo"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="40dp"
-                android:src="@drawable/care_logo"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/topLottie"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="16dp"
-                app:lottie_rawRes="@raw/login_auth"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tvTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Create Account"
-                android:textColor="#FFFFFF"
-                android:textSize="36sp"
-                android:fontFamily="sans-serif-black"
-                android:letterSpacing="-0.01"
-                app:layout_constraintTop_toBottomOf="@id/topLogo"
-                app:layout_constraintStart_toStartOf="@id/topLogo" />
-
-            <!-- 4. Registration Card (Glassmorphism Effect) -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/registerCard"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="28dp"
-                android:layout_marginTop="32dp"
-                app:cardCornerRadius="32dp"
-                app:cardElevation="0dp"
-                app:strokeWidth="1.2dp"
-                app:strokeColor="#40FFFFFF"
-                app:cardBackgroundColor="#26FFFFFF"
-                app:layout_constraintTop_toBottomOf="@id/tvTitle">
+                android:padding="32dp">
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/tvRegisterSubtitle"
+                    style="@style/TextAppearance.CareLanka.BodyMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_subtitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilFullName"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="28dp">
+                    android:layout_marginTop="24dp"
+                    android:hint="@string/label_full_name"
+                    app:layout_constraintTop_toBottomOf="@id/tvRegisterSubtitle"
+                    app:startIconDrawable="@drawable/baseline_health_and_safety_24"
+                    app:startIconTint="@color/primary">
 
-                    <!-- Name -->
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Full Name"
-                        android:textColorHint="#BDBDBD"
-                        app:boxStrokeColor="#FFFFFF"
-                        app:hintTextColor="#FFFFFF"
-                        app:startIconDrawable="@android:drawable/ic_menu_edit"
-                        app:startIconTint="#FFFFFF"
-                        app:boxCornerRadiusTopStart="14dp"
-                        app:boxCornerRadiusBottomEnd="14dp">
+                        android:inputType="textPersonName" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etName"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textColor="#FFFFFF"
-                            android:textSize="15sp"/>
-                    </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilEmail"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/label_email"
+                    app:layout_constraintTop_toBottomOf="@id/tilFullName"
+                    app:startIconDrawable="@drawable/baseline_health_and_safety_24"
+                    app:startIconTint="@color/primary">
 
-                    <!-- Email -->
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:hint="Email Address"
-                        android:textColorHint="#BDBDBD"
-                        app:boxStrokeColor="#FFFFFF"
-                        app:hintTextColor="#FFFFFF"
-                        app:startIconDrawable="@android:drawable/ic_dialog_email"
-                        app:startIconTint="#FFFFFF"
-                        app:boxCornerRadiusTopStart="14dp"
-                        app:boxCornerRadiusBottomEnd="14dp">
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etEmail"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="textEmailAddress"
-                            android:textColor="#FFFFFF"
-                            android:textSize="15sp"/>
-                    </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPhone"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/label_phone"
+                    app:layout_constraintTop_toBottomOf="@id/tilEmail"
+                    app:startIconDrawable="@drawable/baseline_health_and_safety_24"
+                    app:startIconTint="@color/primary">
 
-                    <!-- Phone -->
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPhone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:hint="Phone Number"
-                        android:textColorHint="#BDBDBD"
-                        app:boxStrokeColor="#FFFFFF"
-                        app:hintTextColor="#FFFFFF"
-                        app:startIconDrawable="@android:drawable/ic_menu_call"
-                        app:startIconTint="#FFFFFF"
-                        app:boxCornerRadiusTopStart="14dp"
-                        app:boxCornerRadiusBottomEnd="14dp">
+                        android:inputType="phone" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etPhone"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="phone"
-                            android:textColor="#FFFFFF"
-                            android:textSize="15sp"/>
-                    </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPassword"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/label_password"
+                    app:endIconMode="password_toggle"
+                    app:layout_constraintTop_toBottomOf="@id/tilPhone"
+                    app:startIconDrawable="@drawable/baseline_health_and_safety_24"
+                    app:startIconTint="@color/primary">
 
-                    <!-- Password -->
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:hint="Password"
-                        android:textColorHint="#BDBDBD"
-                        app:boxStrokeColor="#FFFFFF"
-                        app:hintTextColor="#FFFFFF"
-                        app:endIconMode="password_toggle"
-                        app:endIconTint="#FFFFFF"
-                        app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
-                        app:startIconTint="#FFFFFF"
-                        app:boxCornerRadiusTopStart="14dp"
-                        app:boxCornerRadiusBottomEnd="14dp">
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etPassword"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="textPassword"
-                            android:textColor="#FFFFFF"
-                            android:textSize="15sp"/>
-                    </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:id="@+id/tvRoleLabel"
+                    style="@style/TextAppearance.CareLanka.BodyLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/label_select_role"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tilPassword" />
 
-                    <!-- Role Selection -->
+                <RadioGroup
+                    android:id="@+id/rgRole"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/tvRoleLabel">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rbPatient"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/role_patient" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rbCaregiver"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/role_caregiver" />
+                </RadioGroup>
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cbTerms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/terms_and_conditions"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rgRole" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRegister"
+                    style="@style/Widget.CareLanka.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/btn_register"
+                    app:layout_constraintTop_toBottomOf="@+id/cbTerms" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnRegister">
+
                     <TextView
+                        style="@style/TextAppearance.CareLanka.BodyMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Register as:"
-                        android:textColor="#FFFFFF"
-                        android:layout_marginTop="16dp"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+                        android:text="@string/already_have_account" />
 
-                    <RadioGroup
-                        android:id="@+id/rgRole"
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/tvLogin"
+                        style="@style/TextAppearance.CareLanka.BodyMedium"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="8dp">
-                        <RadioButton
-                            android:id="@+id/rbPatient"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Patient"
-                            android:textColor="#FFFFFF"
-                            android:buttonTint="#FFFFFF"
-                            android:checked="true"/>
-                        <RadioButton
-                            android:id="@+id/rbCaregiver"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:buttonTint="#FFFFFF"
-                            android:text="Caregiver"
-                            android:textColor="#FFFFFF"/>
-                    </RadioGroup>
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnRegister"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:layout_marginTop="24dp"
-                        android:text="CREATE ACCOUNT"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:backgroundTint="@color/primaryBlue"
-                        app:cornerRadius="18dp"
-                        app:elevation="4dp"/>
-
+                        android:text="@string/action_login"
+                        android:textColor="@color/primary"
+                        android:textStyle="bold" />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
 
-            <!-- Footer Section -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="32dp"
-                android:layout_marginBottom="40dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/registerCard">
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Already have an account? "
-                    android:textColor="#E0E0E0"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/tvLogin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Login"
-                    android:textColor="#FFFFFF"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

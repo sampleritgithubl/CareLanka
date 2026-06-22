@@ -1,3 +1,87 @@
 <resources>
     <string name="app_name">CareLanka</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title_1">Find Trusted Healthcare</string>
+    <string name="onboarding_desc_1">Discover the best doctors and hospitals in your area with verified reviews and ratings.</string>
+    <string name="onboarding_title_2">Emergency Access</string>
+    <string name="onboarding_desc_2">One-tap access to emergency services, ambulances, and urgent care when you need it most.</string>
+    <string name="onboarding_title_3">Health Reminders</string>
+    <string name="onboarding_desc_3">Never miss a dose again. Set up personalized medication and appointment reminders.</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_skip">Skip</string>
+    <string name="btn_get_started">Get Started</string>
+
+    <!-- Authentication -->
+    <string name="login_title">Welcome Back</string>
+    <string name="login_subtitle">Sign in to continue your healthcare journey</string>
+    <string name="label_email">Email Address</string>
+    <string name="label_password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="no_account">Don\'t have an account? </string>
+    <string name="action_sign_up">Sign Up</string>
+
+    <string name="register_title">Create Account</string>
+    <string name="register_subtitle">Join CareLanka for a better health experience</string>
+    <string name="label_full_name">Full Name</string>
+    <string name="label_phone">Phone Number</string>
+    <string name="label_confirm_password">Confirm Password</string>
+    <string name="label_select_role">Select your role</string>
+    <string name="role_patient">Patient</string>
+    <string name="role_caregiver">Caregiver</string>
+    <string name="btn_register">Create Account</string>
+    <string name="already_have_account">Already have an account? </string>
+    <string name="action_login">Login</string>
+    <string name="terms_and_conditions">I agree to the Terms &amp; Conditions</string>
+
+    <!-- Dashboard -->
+    <string name="greeting_morning">Good Morning,</string>
+    <string name="greeting_afternoon">Good Afternoon,</string>
+    <string name="greeting_evening">Good Evening,</string>
+    <string name="section_quick_access">Quick Access</string>
+    <string name="section_appointments">Upcoming Appointments</string>
+    <string name="section_health_tips">Health Tips</string>
+    <string name="view_all">View All</string>
+    <string name="health_priority">Your Health Priority</string>
+    <string name="upcoming_appointments">Upcoming Appointments</string>
+    <string name="health_reports">Health Reports</string>
+    <string name="health_services">Health Services</string>
+    <string name="support_banner_title">24/7 Medical Support</string>
+    <string name="support_banner_desc">Get instant help from our medical experts anytime, anywhere.</string>
+    <string name="logout_button">Logout</string>
+    <string name="contact_now">Contact Now</string>
+
+    <!-- Quick Access Labels -->
+    <string name="menu_find_hospitals">Find Hospitals</string>
+    <string name="menu_find_doctors">Find Doctors</string>
+    <string name="menu_emergency">Emergency Call</string>
+    <string name="menu_reminders">Reminders</string>
+    <string name="menu_pharmacy">Pharmacy</string>
+    <string name="menu_records">Health Records</string>
+
+    <!-- Services -->
+    <string name="service_caregivers">Caregivers</string>
+    <string name="service_doctors">Doctors</string>
+    <string name="service_hospitals">Hospitals</string>
+    <string name="service_emergency">Emergency</string>
+    <string name="service_medicine">Medicine</string>
+    <string name="service_reminder">Reminder</string>
+    <string name="service_stays">Stays</string>
+    <string name="service_prescription">Prescription AI</string>
+    <string name="service_skin_analysis">Skin Analysis</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_appointments">Schedule</string>
+    <string name="nav_records">Records</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Legacy / Compatibility Strings -->
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">Login</string>
+    <string name="register_now">Register Now</string>
+    <string name="new_user_prompt">New to CareLanka? </string>
+    <string name="subtitle">Expert healthcare in your pocket</string>
 </resources>

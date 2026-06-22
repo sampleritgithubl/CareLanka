@@ -49,16 +49,45 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerEmergency"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingHorizontal="16dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="24dp"
-            android:clipToPadding="false"
-            android:scrollbars="none"
-            tools:listitem="@layout/item_emergency"/>
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="24dp">
+
+            <!-- SOS Pulsing Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSosPanic"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="🚨 SEND SOS ALERT"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                app:backgroundTint="#EF4444"
+                app:cornerRadius="20dp"
+                app:elevation="8dp"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quick Dial — Emergency Services"
+                android:textColor="#991B1B"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerEmergency"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:scrollbars="none"
+                tools:listitem="@layout/item_emergency"/>
+
+        </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
 

@@ -2,40 +2,39 @@ package com.example.carelanka;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-
-// **වැදගත්:** මෙම import එක ඇතුළත් කරන්න
+import androidx.lifecycle.ViewModelProvider;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
+import dagger.hilt.android.AndroidEntryPoint;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-
+@AndroidEntryPoint
 public class LoginActivity extends AppCompatActivity {
 
-    // **වැදගත්:** EditText වෙනුවට TextInputEditText ලෙස වෙනස් කරන්න
-    TextInputEditText etEmail, etPassword;
-    Button btnLogin;
-    TextView tvRegister;
-    FirebaseAuth mAuth;
-    FirebaseFirestore db;
+    private TextInputEditText etEmail, etPassword;
+    private MaterialButton btnLogin;
+    private ProgressBar progressBar;
+    private LoginViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mAuth = FirebaseAuth.getInstance();
-        db = FirebaseFirestore.getInstance();
+        // ViewModel එක සම්බන්ධ කිරීම
+        viewModel = new ViewModelProvider(this).get(LoginViewModel.class);
 
-        // XML එකේ අලුතින් දැමූ IDs මෙතැනදී සම්බන්ධ වේ
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
-        tvRegister = findViewById(R.id.tvRegister); // XML එකට මෙය එක් කර ඇත
+        // XML එකේ progressBar එකක් නැතිනම් පහත පේළිය ඉවත් කරන්න හෝ එක් කරන්න
+        // progressBar = findViewById(R.id.progressBar); 
+
+        // LiveData නිරීක්ෂණය කිරීම (Observers)
+        setupObservers();
 
         btnLogin.setOnClickListener(v -> {
             String email = etEmail.getText().toString().trim();
@@ -46,42 +45,40 @@ public class LoginActivity extends AppCompatActivity {
                 return;
             }
 
-            // Firebase Auth හරහා ලොග් වීම
-            mAuth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(task -> {
-                        if (task.isSuccessful()) {
-                            String uid = mAuth.getCurrentUser().getUid();
-
-                            // Firestore වෙතින් Role එක පරීක්ෂා කිරීම
-                            db.collection("Users").document(uid).get()
-                                    .addOnCompleteListener(dbTask -> {
-                                        if (dbTask.isSuccessful()) {
-                                            DocumentSnapshot document = dbTask.getResult();
-                                            if (document.exists()) {
-                                                String role = document.getString("role");
-
-                                                if ("Caregiver".equals(role)) {
-                                                    startActivity(new Intent(LoginActivity.this, CaregiverDashboard.class));
-                                                } else {
-                                                    startActivity(new Intent(LoginActivity.this, PatientDashboard.class));
-                                                }
-                                                finish();
-                                            } else {
-                                                Toast.makeText(this, "User details not found", Toast.LENGTH_SHORT).show();
-                                                mAuth.signOut();
-                                            }
-                                        } else {
-                                            Toast.makeText(this, "Database Error: " + dbTask.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
-                        } else {
-                            Toast.makeText(this, "Login Failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
+            viewModel.login(email, password);
         });
 
-        tvRegister.setOnClickListener(v -> {
-            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+        findViewById(R.id.tvSignUp).setOnClickListener(v -> {
+            startActivity(new Intent(this, RegisterActivity.class));
+        });
+    }
+
+    private void setupObservers() {
+        // Login සාර්ථක වූ පසු Role එක අනුව Dashboard එකට යෑම
+        viewModel.getUserRole().observe(this, role -> {
+            if (role != null) {
+                if ("Caregiver".equals(role)) {
+                    startActivity(new Intent(this, CaregiverDashboard.class));
+                } else {
+                    startActivity(new Intent(this, PatientDashboard.class));
+                }
+                finish();
+            }
+        });
+
+        // Error එකක් ආවොත් පෙන්වීම
+        viewModel.getLoginError().observe(this, error -> {
+            if (error != null) {
+                Toast.makeText(this, error, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        // Loading ස්වභාවය පාලනය (Optional)
+        viewModel.getIsLoading().observe(this, isLoading -> {
+            if (progressBar != null) {
+                progressBar.setVisibility(isLoading ? View.VISIBLE : View.GONE);
+            }
+            btnLogin.setEnabled(!isLoading);
         });
     }
 }

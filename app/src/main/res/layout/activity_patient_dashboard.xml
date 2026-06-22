@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        app:elevation="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_splash_gradient"
+            android:padding="24dp"
+            android:paddingTop="56dp"
+            android:paddingBottom="100dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:padding="2dp"
+                android:src="@drawable/baseline_health_and_safety_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+                app:strokeColor="@color/white"
+                app:strokeWidth="2dp"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/tvGreeting"
+                style="@style/TextAppearance.CareLanka.BodyMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/greeting_morning"
+                android:textColor="#CCFFFFFF"
+                app:layout_constraintStart_toEndOf="@id/ivProfile"
+                app:layout_constraintTop_toTopOf="@id/ivProfile" />
+
+            <TextView
+                android:id="@+id/tvUserName"
+                style="@style/TextAppearance.CareLanka.HeadlineSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kavindu"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvGreeting"
+                app:layout_constraintTop_toBottomOf="@id/tvGreeting" />
+
+            <ImageButton
+                android:id="@+id/btnNotifications"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Notifications"
+                android:src="@drawable/baseline_arrow_forward_24"
+                app:layout_constraintBottom_toBottomOf="@id/ivProfile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivProfile"
+                app:tint="@color/white" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-4dp"
+        android:background="@drawable/bg_dashboard_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="120dp">
+
+            <!-- Compact Health Status Card - Resized as requested -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp"
+                app:strokeWidth="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lavHeart"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/health" />
+
+                    <TextView
+                        android:id="@+id/tvHealthScore"
+                        style="@style/TextAppearance.CareLanka.HeadlineSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Excellent"
+                        android:textColor="@color/primary"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/lavHeart" />
+
+                    <TextView
+                        style="@style/TextAppearance.CareLanka.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Overall Health Condition"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvHealthScore" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                style="@style/TextAppearance.CareLanka.HeadlineSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/health_services"
+                android:textStyle="bold" />
+
+            <!-- All Quick Access Cards -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:alignmentMode="alignMargins"
+                android:columnCount="2">
+
+                <!-- Prescription AI -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPrescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📄" android:textSize="32sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/service_prescription" style="@style/TextAppearance.CareLanka.BodyMedium" android:textStyle="bold" android:gravity="center" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Skin Analysis -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardSkinAnalysis"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🔍" android:textSize="32sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/service_skin_analysis" style="@style/TextAppearance.CareLanka.BodyMedium" android:textStyle="bold" android:gravity="center" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Find Caregivers -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardFindCaregiver"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🤝" android:textSize="32sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/service_caregivers" style="@style/TextAppearance.CareLanka.BodyMedium" android:textStyle="bold" android:gravity="center" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Doctors -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardDoctors"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="👨‍⚕️" android:textSize="32sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/service_doctors" style="@style/TextAppearance.CareLanka.BodyMedium" android:textStyle="bold" android:gravity="center" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Hospitals -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardHospitals"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🏥" android:textSize="32sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/service_hospitals" style="@style/TextAppearance.CareLanka.BodyMedium" android:textStyle="bold" android:gravity="center" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Emergency -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardEmergency"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🚑" android:textSize="32sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/service_emergency" style="@style/TextAppearance.CareLanka.BodyMedium" android:textStyle="bold" android:gravity="center" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Medicine -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardMedicine"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💊" android:textSize="32sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/service_medicine" style="@style/TextAppearance.CareLanka.BodyMedium" android:textStyle="bold" android:gravity="center" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Reminders -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardReminder"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⏰" android:textSize="32sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/service_reminder" style="@style/TextAppearance.CareLanka.BodyMedium" android:textStyle="bold" android:gravity="center" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </GridLayout>
+
+            <!-- AI Bot Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAiSupport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="8dp"
+                app:strokeColor="@color/primary"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/primaryContainer"
+                    android:orientation="horizontal"
+                    android:padding="24dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TextAppearance.CareLanka.HeadlineSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="AI Health Assistant"
+                            android:textColor="@color/onPrimaryContainer"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            style="@style/TextAppearance.CareLanka.BodyMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Ask in Sinhala, Tamil or English"
+                            android:textColor="@color/onPrimaryContainer" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAiChat"
+                            style="@style/Widget.Material3.Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Chat Now"
+                            app:icon="@drawable/baseline_health_and_safety_24" />
+                    </LinearLayout>
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/login_auth" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_bottom_nav"
+        app:elevation="8dp"
+        app:itemIconTint="@color/primary"
+        app:itemTextColor="@color/primary"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

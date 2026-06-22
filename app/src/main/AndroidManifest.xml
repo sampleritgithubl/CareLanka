@@ -8,17 +8,20 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 
-
-        <queries>
-            <package android:name="com.google.android.apps.maps" />
-            <intent>
-                <action android:name="android.intent.action.VIEW" />
-                <data android:scheme="geo" />
-            </intent>
-        </queries>
+    <queries>
+        <package android:name="com.google.android.apps.maps" />
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="geo" />
+        </intent>
+    </queries>
 
     <application
+        android:name=".CareLankaApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -29,15 +32,21 @@
         android:theme="@style/Theme.CareLanka"
         tools:targetApi="31">
 
-        <!-- Login Screen -->
+        <!-- Splash Screen -->
         <activity
-            android:name=".LoginActivity"
-            android:exported="true">
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.CareLanka">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Login Screen -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
 
         <!-- Register Screen -->
         <activity
@@ -86,6 +95,22 @@
 
 
         <activity android:name=".FindCaregiverActivity" />
+
+        <activity
+            android:name=".MultilingualAIActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".PrescriptionAIActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".SkinAnalysisActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".StaysListActivity"
+            android:exported="false" />
 
     </application>
 
