@@ -71,7 +71,7 @@ To keep the app stable and future-proof, all Gemini calls were rebuilt as **dire
 
 | Home | AI Chatbot | Prescription Reader | Skin Analysis |
 |---|---|---|---|
-| ![Home](screenshorts/dash.jpg) | ![Chatbot](screenshorts/chatbott.jpg) | ![Prescription](screenshorts/prescrip.jpeg) | ![Skin](screenshorts/skin.jpeg) |
+| ![Home](screenshorts/dash.jpg) | ![Chatbot](screenshorts/chatbott.jpg) | ![Prescription](screenshorts/prescrip.jpeg) | ![Skin](screenshorts/skin.jpeg) | 
 
 ---
 
