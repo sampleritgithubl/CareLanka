@@ -67,18 +67,15 @@ To keep the app stable and future-proof, all Gemini calls were rebuilt as **dire
 
 ## 📱 Screenshots
 
-> _Add screenshots here — see the "Adding Screenshots" section below._
-
 | Home | AI Chatbot | Prescription Reader | Skin Analysis |
 |---|---|---|---|
-| ![Home](screenshorts/dash.jpg) | ![Chatbot](screenshorts/chatbott.jpg) | ![Prescription](screenshorts/prescrip.jpeg) | ![Skin](screenshorts/skin.jpeg) | 
+| ![Home](screenshorts/dash.jpg) | ![Chatbot](screenshorts/chatbott.jpg) | ![Prescription](screenshorts/prescrip.jpeg) | ![Skin](screenshorts/skin.jpeg) |
 
 ---
 
 ## 🎥 Demo Video
 
-[![Watch the demo](screenshorts/video1 (1).mp4)](#)
-<!-- Replace # with your YouTube/Drive link once uploaded -->
+https://github.com/user-attachments/assets/a0a8a22e-83ec-4887-b545-534e91858411
 
 ---
 
@@ -94,7 +91,7 @@ To keep the app stable and future-proof, all Gemini calls were rebuilt as **dire
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/YOUR_USERNAME/CareLanka.git
+   git clone https://github.com/sampleritgithubl/CareLanka.git
    cd CareLanka
    ```
 
@@ -141,8 +138,8 @@ This project was developed as a final-year individual project for [Your Module/C
 **Kavindu Rasanjana**
 Full Stack Developer | Sri Lanka
 
-- GitHub: [@sampleritgithubl](https://github.com/sampleritgithubl) 
-- LinkedIn: [your-linkedin](https://www.linkedin.com/in/kavindu-rasanjana-08002b266/?skipRedirect=true)
+- GitHub: [@sampleritgithubl](https://github.com/sampleritgithubl)
+- LinkedIn: [Kavindu Rasanjana](https://www.linkedin.com/in/kavindu-rasanjana-08002b266/?skipRedirect=true)
 - Portfolio: [kavindu-rasanjana.me](https://kavindu-rasanjana.me)
 
 ---
