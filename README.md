@@ -77,7 +77,7 @@ To keep the app stable and future-proof, all Gemini calls were rebuilt as **dire
 
 ## 🎥 Demo Video
 
-[![Watch the demo](docs/screenshots/video_thumbnail.png)](#)
+[![Watch the demo](screenshots/video.mp4)](#)
 <!-- Replace # with your YouTube/Drive link once uploaded -->
 
 ---
