@@ -141,7 +141,7 @@ This project was developed as a final-year individual project for [Your Module/C
 **Kavindu Rasanjana**
 Full Stack Developer | Sri Lanka
 
-- GitHub: [@your-username](https://github.com/your-username)
+- GitHub: [@sampleritgithubl](https://github.com/sampleritgithubl)
 - LinkedIn: [your-linkedin](https://linkedin.com/in/your-linkedin)
 - Portfolio: [kavindu-rasanjana.me](https://kavindu-rasanjana.me)
 
